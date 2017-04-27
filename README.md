@@ -10,6 +10,6 @@ Also you need install [Angular cli](https://cli.angular.io/) by using this comma
 
 run `npm install` to install all dependencies
 
-create `environment.ts` from `/src/app/environment/environment.prod.ts` and change apiURL to your local server
+create `environment.ts` from `/src/app/environment/environment.prod.ts` and change apiURL (domain) to your local server
 
 `ng serve` will run local server [localhost:4200](http://localhost:4200) by default where you can get this test task
