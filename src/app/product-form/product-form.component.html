@@ -1,0 +1,20 @@
+<h2>{{title}}</h2>
+<form class="product-form" (ngSubmit)="onSubmit(); productForm.reset();" #productForm="ngForm">
+    <input type="text" name="product_name" [(ngModel)]="product_name" placeholder="Product Name" required>
+    <br>
+    <br>
+    <input type="text" name="product_price" [(ngModel)]="product_price" placeholder="Product Price" required>
+    <br>
+    <br>
+    <select #voucherList (change)="onAddVoucher(voucherList.value)">
+        <option value="0">Select voucher</option>
+        <option *ngFor="let voucher of voucherService.vouchers" [value]="voucher.id">{{ voucher.name }}</option>
+    </select>
+    <div class="assigned-vouchers" *ngIf="vouchers.length">
+        <label>Assigned vouchers to product</label>
+        <span *ngFor="let voucher of vouchers">{{ voucher.name }} <i (click)="onDelVoucher(voucher)">X</i></span>
+    </div>
+    <br>
+    <br>
+    <button type="submit" [disabled]="!productForm.form.valid">Create Product</button>
+</form>

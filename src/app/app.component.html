@@ -1,0 +1,13 @@
+<header>
+    <h1>{{title}}</h1>
+</header>
+
+<main>
+    <ul class="main-nav">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Products list</a></li>
+        <li><a routerLink="/create-product" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Add Product</a></li>
+        <li><a routerLink="/create-voucher" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Add Voucher</a></li>
+    </ul>
+
+    <router-outlet></router-outlet>
+</main>

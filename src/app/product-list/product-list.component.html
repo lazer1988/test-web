@@ -1,0 +1,5 @@
+<h2>{{ title }}</h2>
+<div class="product-list" *ngIf="productService.products.length">
+    <div class="product"><a href="javascript:;" (click)="onSort()">click to sort by name</a></div>
+    <product *ngFor="let product of productService.products" [product]="product" (delete)="delete($event)" (toggle)="toggle($event)"></product>
+</div>

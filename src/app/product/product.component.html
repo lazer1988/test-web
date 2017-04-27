@@ -1,0 +1,15 @@
+<div class="product" [class.bought]="product.is_bought">
+    <div class="data">
+        <span class="title">#{{product.id}} {{product.name}}</span>
+        <div class="price-box" [class.has-discount]="product.discount">
+            <span class="price">{{product.price}}</span>
+            <span class="new-price">{{product.discount_price}}</span>
+            <span class="off">off {{product.discount}}%</span>
+        </div>
+    </div>
+    <div class="actions">
+        <button class="buy icon" (click)="buy()" [disabled]="product.is_bought">
+            <i class="material-icons">BUY</i>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<h2>{{title}}</h2>
+<form class="product-form" (ngSubmit)="onSubmit(); productForm.reset();" #productForm="ngForm">
+    <input name="name" type="text" [(ngModel)]="voucherName" placeholder="Voucher name" required />
+
+    <my-date-picker name="start_date" [options]="myDatePickerOptions" [(ngModel)]="start_date" required></my-date-picker>
+    <my-date-picker name="end_date" [options]="myDatePickerOptions" [(ngModel)]="end_date" required></my-date-picker>
+
+    <select name="discount" [(ngModel)]="discount_id" required>
+        <option value="0">Select discount</option>
+        <option *ngFor="let dis of voucherService.discounts" [value]="dis.id">
+            {{dis.discount}}%
+        </option>
+    </select>
+    <button type="submit" [disabled]="!productForm.form.valid">Create Voucher</button>
+</form>
